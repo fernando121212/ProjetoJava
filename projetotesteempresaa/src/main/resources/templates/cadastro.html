@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<br>
+
+<div class="container">
+
+<form action="salvar" method="POST" >
+     
+     <div class="alert alert-success" th:each = "msg : ${mensagem}">
+        <span th:text = "${msg}"> </span>
+    </div> 
+
+    <div class="alert alert-danger" th:each = "ms : ${msg}">
+        <span th:text = "${ms}"> </span>
+    </div>      
+
+<div class="jumbotron"  style="margin-top: 70px;">
+		
+			<div class="form-group aw-required ">
+				<label for="nome" >Nome</label> <input type="text"
+					class="form-control "  id="nome" name="nome" placeholder="Nome" />					 					
+			</div>
+			
+			<div class="form-group ">
+				<label for="Sobrenome">Sobrenome</label> <input type="text"
+					class="form-control" id="sobrenome"  name="sobrenome" placeholder="Sobrenome" />								
+			</div>
+						
+			<div class="form-group ">
+				<label for="telefone">Telefone</label> <input
+					type="text" class="form-control"  id="telefone" name="telefone" placeholder="Telefone" onkeyup="mascara( this, mtel );" maxlength="11" />										
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Salvar</button>		
+			<a href="listar" class="btn btn-primary">Listar</a>	
+			</div>		
+		</form>
+</body>
+</html>
